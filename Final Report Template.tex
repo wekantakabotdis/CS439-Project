@@ -16,17 +16,10 @@
 \title{Predicting Professional Tennis Match Outcomes with Pre-Match Data}
 
 \author{%
-  Yining Chen\\
+  Yining Chen \quad Michael Chiu \quad Ryan Xu\\
   CS 439: Introduction to Data Science\\
-  Section 7; NetID: \texttt{ycc30}
-  \And
-  Michael Chiu\\
-  CS 439: Introduction to Data Science\\
-  Section 7; NetID: \texttt{mkc149}
-  \And
-  Ryan Xu\\
-  CS 439: Introduction to Data Science\\
-  Section 7; NetID: \texttt{rwx1}
+  Section 7\\
+  NetIDs: \texttt{ycc30}, \texttt{mkc149}, \texttt{rwx1}
 }
 
 \begin{document}
@@ -35,6 +28,14 @@
 
 \begin{abstract}
 Professional tennis is a useful prediction setting because each match has a clear binary outcome, rich public historical data, and many interpretable pre-match covariates. We study ATP singles matches from 2010 through 2024 and ask whether ranking, ranking points, age, surface, round, match format, experience, and prior win-rate features can predict winners more accurately than a simple higher-ranked-player baseline. The raw Jeff Sackmann ATP match files contain 42,571 matches; after basic date and ranking cleaning, our modeling dataset contains 41,750 matches. To avoid target leakage, we rewrite each match as a randomized Player 1 versus Player 2 prediction problem and construct all history features using only matches that occurred earlier in time. We compare logistic regression, random forest, and gradient boosting pipelines using five-fold time-series cross-validation. The higher-ranked baseline achieves 65.3\% mean accuracy and 0.690 ROC-AUC. The random forest performs best among the learned models, reaching 66.6\% mean accuracy, 66.6\% balanced accuracy, 66.9\% F1, and 0.732 ROC-AUC. Feature importance suggests that ranking points, ranking difference, career win rate, and surface-specific win rate are the most informative inputs. These results show that simple pre-match features improve slightly over rankings alone, but also that tennis outcomes remain noisy and difficult to predict without richer player, injury, scheduling, and match-context information.
+
+\begin{center}
+\vspace{0.4em}
+{\small\textbf{Project Links}\\[0.2em]
+\href{https://github.com/wekantakabotdis/CS439-Project}{GitHub Repository}
+\hspace{2em}
+\href{https://www.youtube.com/watch?v=aPlrV3W4zwg}{Project Video}}
+\end{center}
 \end{abstract}
 
 \section{Introduction}
